@@ -149,6 +149,165 @@ matrix:
             - valgrind
       env:
         - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          packages:
+            - apache2
+            - build-essential
+            - gcovr
+            - gperf
+            - lcov
+            - libgd-dev
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - automake
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=gcc && CXX=g++"
+
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - apache2
+            - build-essential
+            - gcovr
+            - gperf
+            - g++-5
+            - automake
+            - lcov
+            - libgd-dev
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - apache2
+            - build-essential
+            - gcovr
+            - gperf
+            - g++-6
+            - lcov
+            - libgd-dev
+            - automake
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - apache2
+            - build-essential
+            - gcovr
+            - gperf
+            - g++-7
+            - lcov
+            - automake
+            - libgd-dev
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - apache2
+            - build-essential
+            - gcovr
+            - gperf
+            - g++-8
+            - lcov
+            - automake
+            - libgd-dev
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - apache2
+            - build-essential
+            - clang-5.0
+            - gcovr
+            - gperf
+            - lcov
+            - automake
+            - libgd-dev
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+
+    - os: linux
+      arch: arm64
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-6.0
+            - ubuntu-toolchain-r-test
+          packages:
+            - apache2
+            - build-essential
+            - clang-6.0
+            - gcovr
+            - gperf
+            - g++-4.9
+            - automake
+            - lcov
+            - libgd-dev
+            - php7.2
+            - php7.2-gd
+            - unzip
+            - valgrind
+      env:
+        - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
 
 before_install:
   - eval "${MATRIX_EVAL}"
